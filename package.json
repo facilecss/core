@@ -1,16 +1,24 @@
 {
-  "name": "@facilecss/core",
-  "version": "0.1.1-beta.0",
-  "description": "Simple, small & useful CSS libary. (BETA)",
-  "main": "index.js",
-  "scripts": {
-    "dev:client": "node src/main"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "chalk": "4.1.2",
-    "moment": "^2.29.3"
-  }
+    "name": "@facilecss/core",
+    "version": "0.1.1-beta.0",
+    "description": "Simple, small & useful CSS libary. (BETA)",
+    "main": "index.js",
+    "scripts": {
+        "dev:cli": "node src/cli",
+        "dev:client": "node src/main"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "chalk": "4.1.2",
+        "child_process": "^1.0.2",
+        "cli-spinner": "^0.2.10",
+        "cssmin": "^0.4.3",
+        "inquirer": "^9.0.0",
+        "moment": "^2.29.3"
+    },
+    "devDependencies": {
+        "eslint": "^8.19.0"
+    }
 }
