@@ -11,3 +11,4 @@ const client = new Client({
 });
 
 client.run();
+module.exports = { client };
