@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /*===========================================================================================
  *  Copyright (c) Facil CSS authors. All rights reserved.
  *  Licensed under the MIT License. Read the LICENSE file, for more information.
@@ -11,12 +9,19 @@ const chalk = require("chalk");
 const config = require("./config");
 const moment = require("moment");
 
-/*======== Command Handler ========*/
+function checkForConfigFile() {
+    if (!fs.existsSync(path.resolve(__dirname, config.compiler.file))) {
+        let userClock = moment().format("HH:mm:ss");
 
-process.argv.forEach((cmd) => {
-    if (cmd === "version") {
-        require("./cmds/version");
-    } else if (cmd == "init") {
-        require("./cmds/init");
+        console.log(
+            chalk.gray(
+                `${chalk.cyanBright(`[${userClock}]`)} ${chalk.hex(
+                    config.colors.pink
+                )(config.compiler.file)} not found.`
+            )
+        );
+        process.exit(1);
     }
-});
+}
+
+module.exports = { checkForConfigFile };
