@@ -33,14 +33,20 @@ const commands = [
         description: "Prints the version of the cli",
         action: require("./cmds/version"),
     },
+
+    {
+        name: "init",
+        description: "Initializes a new config file for you.",
+        action: require("./cmds/init"),
+    },
 ];
 
 module.exports = { commands };
 
 // forEach commands
-commands.forEach((command) => {
-    if (command.name === process.argv[2]) {
-        command.action();
+process.argv.forEach((cmd) => {
+    if (cmd === "version") {
+        commands[0].action();
     }
 });
 
