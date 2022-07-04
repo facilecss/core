@@ -9,6 +9,7 @@ specifiers:
   hypestyle-cli: ^4.2.6
   inquirer: 8.2.0
   moment: ^2.29.3
+  named-colors: ^1.0.0
 
 dependencies:
   chalk: 4.1.2
@@ -17,6 +18,7 @@ dependencies:
   cssmin: 0.4.3
   inquirer: 8.2.0
   moment: 2.29.3
+  named-colors: 1.0.0
 
 devDependencies:
   eslint: 8.19.0
@@ -650,6 +652,10 @@ packages:
 
   /mute-stream/0.0.8:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
+
+  /named-colors/1.0.0:
+    resolution: {integrity: sha512-F02pZCDi3RaAMXsF/iWG7r9UVmoAwn7DAftTeeW8+sN+0FYTEYbvb5f9gbxt8FS7yMYGCC7RMgKpZjXIKmWVmQ==}
+    dev: false
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
