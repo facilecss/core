@@ -62,6 +62,78 @@ const classes = [
             10: rootVar.basePadding * 10 + "rem",
         },
     },
+
+    {
+        name: "padding-left",
+        prefix: "pl",
+        values: {
+            0: "0",
+            1: rootVar.basePadding + "rem",
+            2: rootVar.basePadding * 2 + "rem",
+            3: rootVar.basePadding * 3 + "rem",
+            4: rootVar.basePadding * 4 + "rem",
+            5: rootVar.basePadding * 5 + "rem",
+            6: rootVar.basePadding * 6 + "rem",
+            7: rootVar.basePadding * 7 + "rem",
+            8: rootVar.basePadding * 8 + "rem",
+            9: rootVar.basePadding * 9 + "rem",
+            10: rootVar.basePadding * 10 + "rem",
+        },
+    },
+
+    {
+        name: "padding-right",
+        prefix: "pr",
+        values: {
+            0: "0",
+            1: rootVar.basePadding + "rem",
+            2: rootVar.basePadding * 2 + "rem",
+            3: rootVar.basePadding * 3 + "rem",
+            4: rootVar.basePadding * 4 + "rem",
+            5: rootVar.basePadding * 5 + "rem",
+            6: rootVar.basePadding * 6 + "rem",
+            7: rootVar.basePadding * 7 + "rem",
+            8: rootVar.basePadding * 8 + "rem",
+            9: rootVar.basePadding * 9 + "rem",
+            10: rootVar.basePadding * 10 + "rem",
+        },
+    },
+
+    {
+        name: "padding-top",
+        prefix: "pt",
+        values: {
+            0: "0",
+            1: rootVar.basePadding + "rem",
+            2: rootVar.basePadding * 2 + "rem",
+            3: rootVar.basePadding * 3 + "rem",
+            4: rootVar.basePadding * 4 + "rem",
+            5: rootVar.basePadding * 5 + "rem",
+            6: rootVar.basePadding * 6 + "rem",
+            7: rootVar.basePadding * 7 + "rem",
+            8: rootVar.basePadding * 8 + "rem",
+            9: rootVar.basePadding * 9 + "rem",
+            10: rootVar.basePadding * 10 + "rem",
+        },
+    },
+
+    {
+        name: "padding-bottom",
+        prefix: "pb",
+        values: {
+            0: "0",
+            1: rootVar.basePadding + "rem",
+            2: rootVar.basePadding * 2 + "rem",
+            3: rootVar.basePadding * 3 + "rem",
+            4: rootVar.basePadding * 4 + "rem",
+            5: rootVar.basePadding * 5 + "rem",
+            6: rootVar.basePadding * 6 + "rem",
+            7: rootVar.basePadding * 7 + "rem",
+            8: rootVar.basePadding * 8 + "rem",
+            9: rootVar.basePadding * 9 + "rem",
+            10: rootVar.basePadding * 10 + "rem",
+        },
+    },
 ];
 
 function genarateClasses() {
