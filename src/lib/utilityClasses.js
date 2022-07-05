@@ -56,7 +56,9 @@ function genarateClasses() {
     return classs;
 }
 
+let fileComment = fs.readFileSync("src/utils/fileComment.txt", "utf8");
+
 fs.writeFileSync(
     "src/css/utilityClasses.bundle.css",
-    `${cssmin(genarateClasses())}`
+    `${fileComment}${cssmin(genarateClasses())}`
 );
