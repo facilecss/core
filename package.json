@@ -1,7 +1,7 @@
 {
     "name": "@facilecss/core",
     "version": "0.1.1-beta.0",
-    "description": "Simple, small & useful CSS libary. (BETA)",
+    "description": "Simple functional CSS library, build on utility classes & components",
     "main": "index.js",
     "scripts": {
         "dev:cli": "node src/cli",
