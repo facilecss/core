@@ -9,7 +9,6 @@
     --ifm-code-font-size: 95%;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
     --ifm-color-primary: #ea4442;
     --ifm-color-primary-dark: #21af90;

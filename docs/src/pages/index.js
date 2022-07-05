@@ -1,12 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @format
- */
-
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
@@ -17,34 +8,32 @@ import styles from './styles.module.css';
 
 const features = [
     {
+        title: 'Functional',
+        imageUrl: 'img/undraw_functionnal.svg',
+        description: (
+            <>
+                Facile CSS comes with a config file that allows you to customize
+                the classes or colors, etc.
+            </>
+        ),
+    },
+    {
+        title: 'Focus on Performance',
+        imageUrl: 'img/undraw_performance.svg',
+        description: (
+            <>
+                Facile CSS is built on utility classes and components, which
+                means it is optimized for performance.
+            </>
+        ),
+    },
+    {
         title: 'Easy to Use',
-        imageUrl: 'img/undraw_docusaurus_mountain.svg',
+        imageUrl: 'img/undraw_easy.svg',
         description: (
             <>
-                Docusaurus was designed from the ground up to be easily
-                installed and used to get your website up and running quickly.
-            </>
-        ),
-    },
-    {
-        title: 'Focus on What Matters',
-        imageUrl: 'img/undraw_docusaurus_tree.svg',
-        description: (
-            <>
-                Docusaurus lets you focus on your docs, and we&apos;ll do the
-                chores. Go ahead and move your docs into the <code>docs</code>{' '}
-                directory.
-            </>
-        ),
-    },
-    {
-        title: 'Powered by React',
-        imageUrl: 'img/undraw_docusaurus_react.svg',
-        description: (
-            <>
-                Extend or customize your website layout by reusing React.
-                Docusaurus can be extended while reusing the same header and
-                footer.
+                Facile CSS is one of the most simple css librarys out there. The
+                word facile is French and means "simple, easy" on english.
             </>
         ),
     },
