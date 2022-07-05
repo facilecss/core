@@ -6,6 +6,7 @@
 const chalk = require("chalk");
 const fs = require("fs");
 const path = require("path");
+const config = require("../config");
 const colors = require("./colors");
 
 /*======== Utility Classes starts here ========*/
@@ -18,7 +19,7 @@ const rootVar = {
 const classes = [
     {
         name: "font-size",
-        prefix: "font-size",
+        prefix: "font",
         values: {
             xs: "0.75rem",
             sm: "0.875rem",
@@ -28,18 +29,32 @@ const classes = [
         },
     },
 
-    {
-        name: "font-family",
-        prefix: "font-family",
-        values: {
-            sans: "sans-serif",
-            serif: "serif",
-            mono: "monospace",
-            inherit: "inherit",
-        },
-    },
+    // {
+    //     name: "font-family",
+    //     prefix: "font-family",
+    //     values: {
+    //         sans: "sans-serif",
+    //         serif: "serif",
+    //         mono: "monospace",
+    //         inherit: "inherit",
+    //     },
+    // },
 ];
 
-classes.map((className) => {
-    console.log(className.values);
-});
+function genarateClasses() {
+    let classs = "";
+    classes.map((item) => {
+        values = Object.keys(item.values)
+            .map((key) => {
+                return `.${item.prefix}-${key}: { ${item.name}: ${item.values[key]} };`;
+            })
+            .join("\n");
+
+        classs += `\n${values}\n`;
+    });
+
+    return classs;
+}
+
+console.log(chalk.hex(config.colors.pink)("🎉 Generating utility classes..."));
+console.log(genarateClasses());

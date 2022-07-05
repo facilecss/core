@@ -1,0 +1,13 @@
+.font-size {
+	xs: 0.75rem;
+	sm: 0.875rem;
+	md: 1.125rem;
+	lg: 1.25rem;
+	xl: 1.5rem;
+}
+.font-family {
+	sans: sans-serif;
+	serif: serif;
+	mono: monospace;
+	inherit: inherit;
+}
