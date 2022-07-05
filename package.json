@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "dev:cli": "node src/cli",
-        "dev:client": "node src/main"
+        "dev:client": "node src/main",
+        "dev:scripts:build": "node scripts/build"
     },
     "keywords": [],
     "author": "",

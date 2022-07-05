@@ -9,6 +9,7 @@ const path = require("path");
 const config = require("../config");
 const colors = require("./colors");
 const cssmin = require("cssmin");
+const moment = require("moment");
 
 /*======== Utility Classes starts here ========*/
 
@@ -42,6 +43,9 @@ const classes = [
 ];
 
 function genarateClasses() {
+    let time = Date.now();
+    let userClock = moment().format("HH:mm:ss");
+
     let classs = "";
     classes.map((item) => {
         values = Object.keys(item.values)
@@ -52,6 +56,14 @@ function genarateClasses() {
 
         classs += `\n${values}\n`;
     });
+
+    console.log(
+        chalk.gray(
+            `${chalk.cyanBright(`[${userClock}]`)} ${chalk.hex(
+                config.colors.pink
+            )("✅ Build done in, ")} ${Date.now() - time}ms`
+        )
+    );
 
     return classs;
 }
