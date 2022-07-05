@@ -8,12 +8,12 @@ const fs = require("fs");
 const path = require("path");
 const config = require("../config");
 const colors = require("./colors");
+const cssmin = require("cssmin");
 
 /*======== Utility Classes starts here ========*/
 
 const rootVar = {
     baseFontSize: "1rem",
-    // baseBoxShadow: "1px 3px 5px rgba(0, 0, 0, 0.1)",
 };
 
 const classes = [
@@ -29,16 +29,16 @@ const classes = [
         },
     },
 
-    // {
-    //     name: "font-family",
-    //     prefix: "font-family",
-    //     values: {
-    //         sans: "sans-serif",
-    //         serif: "serif",
-    //         mono: "monospace",
-    //         inherit: "inherit",
-    //     },
-    // },
+    {
+        name: "font-family",
+        prefix: "font-s",
+        values: {
+            sans: "sans-serif",
+            serif: "serif",
+            mono: "monospace",
+            inherit: "inherit",
+        },
+    },
 ];
 
 function genarateClasses() {
@@ -46,7 +46,7 @@ function genarateClasses() {
     classes.map((item) => {
         values = Object.keys(item.values)
             .map((key) => {
-                return `.${item.prefix}-${key}: { ${item.name}: ${item.values[key]} };`;
+                return `.${item.prefix}-${key} {   ${item.name}: ${item.values[key]} };`;
             })
             .join("\n");
 
@@ -56,4 +56,7 @@ function genarateClasses() {
     return classs;
 }
 
-fs.writeFileSync("src/build/utilityClasses..bundle.css", genarateClasses());
+fs.writeFileSync(
+    "src/css/utilityClasses.bundle.css",
+    `${cssmin(genarateClasses())}`
+);
