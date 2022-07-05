@@ -20,4 +20,24 @@ const colors = {
     white: "white",
 };
 
+let colorsClasses = [
+    {
+        name: "color",
+        prefix: "color",
+        values: colors,
+    },
+];
+
+function genarateClasses() {
+    colorsClasses.forEach((colorClass) => {
+        Object.keys(colorClass.values).forEach((key) => {
+            colorClass.values[
+                key
+            ] = `.${colorClass.prefix}-${key} { color: ${colorClass.values[key]}; }`;
+        });
+    });
+}
+
+console.log(genarateClasses());
+
 module.exports = colors;
