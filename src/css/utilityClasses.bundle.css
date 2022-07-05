@@ -3,4 +3,4 @@
  - Copyright 2022 Faciel CSS
  - Licensed under MIT (https://github.com/facielcss/core/blob/master/LICENSE)
  - This file was compiled with the Faciel CSS compiler (https://facielcss.com/docs/compiler)
- */.font-xs{font-size:.75rem};.font-sm{font-size:.875rem};.font-md{font-size:1.125rem};.font-lg{font-size:1.25rem};.font-xl{font-size:1.5rem};.font-s-sans{font-family:sans-serif};.font-s-serif{font-family:serif};.font-s-mono{font-family:monospace};.font-s-inherit{font-family:inherit};
+ */.font-xs{font-size:.75rem};.font-sm{font-size:.875rem};.font-md{font-size:1.125rem};.font-lg{font-size:1.25rem};.font-xl{font-size:1.5rem};.font-s-sans{font-family:sans-serif};.font-s-serif{font-family:serif};.font-s-mono{font-family:monospace};.font-s-inherit{font-family:inherit};.p-0{padding:0};.p-1{padding:.75rem};.p-2{padding:1.5rem};.p-3{padding:2.25rem};.p-4{padding:3rem};.p-5{padding:3.75rem};.p-6{padding:4.5rem};.p-7{padding:5.25rem};.p-8{padding:6rem};.p-9{padding:6.75rem};.p-10{padding:7.5rem};
