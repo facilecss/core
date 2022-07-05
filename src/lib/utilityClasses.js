@@ -5,9 +5,7 @@
 
 const chalk = require("chalk");
 const fs = require("fs");
-const path = require("path");
 const config = require("../config");
-const colors = require("./colors");
 const cssmin = require("cssmin");
 const moment = require("moment");
 
