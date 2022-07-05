@@ -56,5 +56,4 @@ function genarateClasses() {
     return classs;
 }
 
-console.log(chalk.hex(config.colors.pink)("🎉 Generating utility classes..."));
-console.log(genarateClasses());
+fs.writeFileSync("src/build/utilityClasses..bundle.css", genarateClasses());
