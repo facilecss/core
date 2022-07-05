@@ -1,14 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @format
- */
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Facile CSS',
@@ -20,10 +9,8 @@ const config = {
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/icon.png',
 
-    // GitHub pages deployment config.
-    // If you aren't using GitHub pages, you don't need these.
-    organizationName: 'facilecss', // Usually your GitHub org/user name.
-    projectName: 'facilecss', // Usually your repo name.
+    organizationName: 'facilecss',
+    projectName: 'facilecss',
 
     presets: [
         [
@@ -78,37 +65,17 @@ const config = {
                 style: 'dark',
                 links: [
                     {
-                        title: 'Learn',
+                        title: 'Getting Started',
                         items: [
                             {
-                                label: 'Style Guide',
-                                to: 'docs/',
-                            },
-                            {
-                                label: 'Second Doc',
-                                to: 'docs/doc2',
+                                label: 'Introduction',
+                                to: 'docs/intro',
                             },
                         ],
                     },
+
                     {
-                        title: 'Community',
-                        items: [
-                            {
-                                label: 'Stack Overflow',
-                                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-                            },
-                            {
-                                label: 'Twitter',
-                                href: 'https://twitter.com/docusaurus',
-                            },
-                            {
-                                label: 'Discord',
-                                href: 'https://discordapp.com/invite/docusaurus',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'More',
+                        title: 'Socials',
                         items: [
                             {
                                 label: 'Blog',
@@ -116,40 +83,20 @@ const config = {
                             },
                             {
                                 label: 'GitHub',
-                                href: 'https://github.com/facebook/docusaurus',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'Legal',
-                        // Please do not remove the privacy and terms, it's a legal requirement.
-                        items: [
-                            {
-                                label: 'Privacy',
-                                href: 'https://opensource.facebook.com/legal/privacy/',
-                            },
-                            {
-                                label: 'Terms',
-                                href: 'https://opensource.facebook.com/legal/terms/',
-                            },
-                            {
-                                label: 'Data Policy',
-                                href: 'https://opensource.facebook.com/legal/data-policy/',
-                            },
-                            {
-                                label: 'Cookie Policy',
-                                href: 'https://opensource.facebook.com/legal/cookie-policy/',
+                                href: 'https://github.com/facilecss/core',
                             },
                         ],
                     },
                 ],
                 logo: {
-                    alt: 'Facebook Open Source Logo',
-                    src: 'img/oss_logo.png',
-                    href: 'https://opensource.facebook.com',
+                    alt: 'Facile CSS Icon',
+                    src: 'img/icon.png',
+                    width: '48',
+                    height: '48',
+                    href: '/',
                 },
-                // Please do not remove the credits, help to publicize Docusaurus :)
-                copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc. Built with Docusaurus.`,
+
+                copyright: `Copyright © ${new Date().getFullYear()} Facile CSS. Built with ❤️`,
             },
         }),
 };
