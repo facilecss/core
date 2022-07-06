@@ -22,6 +22,22 @@ const classes = [
 
         `,
     },
+
+    {
+        name: 'btn',
+        styles: `
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+        border: 0;
+        padding: 0.75rem 1.5rem;
+        border-radius: 3px;
+        background-color: #e2e2e2;
+        transition: color 0.2s ease-in-out;
+
+        
+        `,
+    },
 ]
 
 function genarateClasses() {
