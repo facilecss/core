@@ -10,10 +10,4 @@ module.exports = {
         outDir: 'dist', // you can change to your custom choice, or leave it empty.
         outFile: 'facile.build.css', // the default output file name is facile.build.css
     },
-
-    classes: {
-        colors: {
-            primary: '#00bcd4',
-        },
-    },
 }
