@@ -7,6 +7,9 @@ const chalk = require("chalk");
 const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
+const { checkForConfigFileExist } = require("../functions");
+
+checkForConfigFileExist();
 
 let questions = [
     {

@@ -24,4 +24,19 @@ function checkForConfigFile() {
     }
 }
 
-module.exports = { checkForConfigFile };
+function checkForConfigFileExist() {
+    if (fs.existsSync(path.resolve(__dirname, config.compiler.file))) {
+        let userClock = moment().format("HH:mm:ss");
+
+        console.log(
+            chalk.gray(
+                `${chalk.cyanBright(`[${userClock}]`)} ${chalk.hex(
+                    config.colors.pink
+                )(config.compiler.file)} already exists.`
+            )
+        );
+        process.exit(1);
+    }
+}
+
+module.exports = { checkForConfigFile, checkForConfigFileExist };

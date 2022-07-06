@@ -4,9 +4,10 @@
     "description": "Simple functional CSS library, build on utility classes & components",
     "main": "index.js",
     "scripts": {
-        "dev:cli": "node src/cli",
+        "dev:cli": "node src/cli.js",
         "dev:client": "node src/main",
-        "dev:scripts:build": "node scripts/build"
+        "dev:scripts:build": "node scripts/build",
+        "dev:scripts:run": "node scripts/run"
     },
     "keywords": [],
     "author": "",
