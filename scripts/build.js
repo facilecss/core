@@ -11,6 +11,11 @@ let buildOptionScripts = [
         name: "colors",
         message: "Build colors",
     },
+
+    {
+        name: "all",
+        message: "Build all classes",
+    },
 ];
 
 inquirer
@@ -19,6 +24,7 @@ inquirer
             type: "list",
             name: "command",
             message: "What build would you like to do?",
+            description: "",
             choices: buildOptionScripts,
         },
 
@@ -34,5 +40,7 @@ inquirer
             runCmd("node src/lib/utilityClasses.js", { stdio: "inherit" });
         } else if (answers.command === "colors") {
             runCmd("node src/lib/colors.js", { stdio: "inherit" });
+        } else if (answers.command === "all") {
+            runCmd("node src/lib/buildAll.js", { stdio: "inherit" });
         }
     });

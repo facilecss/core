@@ -47,6 +47,27 @@ classes = [
             white: colors.white,
         },
     },
+
+    {
+        name: "background-color",
+        prefix: "bg",
+        values: {
+            primary: colors.primary,
+            secondary: colors.secondary,
+            error: colors.error,
+            info: colors.info,
+            teal: colors.teal,
+            blue: colors.blue,
+            red: colors.red,
+            yellow: colors.yellow,
+            green: colors.green,
+            orange: colors.orange,
+            purple: colors.purple,
+            gray: colors.gray,
+            black: colors.black,
+            white: colors.white,
+        },
+    },
 ];
 
 function genarateClasses() {
