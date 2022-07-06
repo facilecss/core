@@ -1,0 +1,14 @@
+/*
+ - Facile CSS (https://facielcss.com)
+ - Copyright 2022 Faciel CSS
+ - Licensed under MIT (https://github.com/facielcss/core/blob/master/LICENSE)
+ - This file was compiled with the Faciel CSS compiler (https://facielcss.com/docs/compiler)
+ */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0.75rem 1.5rem;
+}
