@@ -3,6 +3,12 @@
  *  Licensed under the MIT License. Read the LICENSE file, for more information.
  *===========================================================================================*/
 
+const chalk = require("chalk");
+const fs = require("fs");
+const config = require("../config");
+const cssmin = require("cssmin");
+const moment = require("moment");
+
 const colors = {
     primary: "#ea4442",
     secondary: "#f5f5f5",
@@ -20,82 +26,42 @@ const colors = {
     white: "white",
 };
 
-let colorsClasses = [
+classes = [
     {
         name: "color",
-        prefix: "color",
-        values: colors,
+        prefix: "color-",
+        values: {
+            primary: colors.primary,
+            secondary: colors.secondary,
+            error: colors.error,
+            info: colors.info,
+            teal: colors.teal,
+            blue: colors.blue,
+            red: colors.red,
+            yellow: colors.yellow,
+            green: colors.green,
+            orange: colors.orange,
+            purple: colors.purple,
+            gray: colors.gray,
+            black: colors.black,
+            white: colors.white,
+        },
     },
 ];
 
-function genarateShades() {
-    function shade(color, percent) {
-        let f = parseInt(color.slice(1), 16),
-            t = percent < 0 ? 0 : 255,
-            p = percent < 0 ? percent * -1 : percent,
-            R = f >> 16,
-            G = (f >> 8) & 0x00ff,
-            B = f & 0x0000ff;
-
-        return (
-            "#" +
-            (
-                0x1000000 +
-                (Math.round((t - R) * p) + R) * 0x10000 +
-                (Math.round((t - G) * p) + G) * 0x100 +
-                (Math.round((t - B) * p) + B)
-            )
-                .toString(16)
-                .slice(1)
-        );
+function genarateClasses() {
+    let classes = [];
+    for (let i = 0; i < arguments.length; i++) {
+        let className = arguments[i].name;
+        let classPrefix = arguments[i].prefix;
+        let classValues = arguments[i].values;
+        for (let key in classValues) {
+            classes.push(`${classPrefix}${key}`);
+        }
     }
-
-    function darken(color, percent) {
-        return shade(color, percent);
-    }
-
-    function lighten(color, percent) {
-        return shade(color, percent);
-    }
-
-    colorsClasses.push({
-        name: "color-darken",
-        prefix: "darken",
-        values: {
-            0: "0",
-            1: darken(colors.primary, 0.1),
-            2: darken(colors.primary, 0.2),
-            3: darken(colors.primary, 0.3),
-            4: darken(colors.primary, 0.4),
-            5: darken(colors.primary, 0.5),
-            6: darken(colors.primary, 0.6),
-            7: darken(colors.primary, 0.7),
-            8: darken(colors.primary, 0.8),
-            9: darken(colors.primary, 0.9),
-            10: darken(colors.primary, 1),
-        },
-
-        // color-lighten
-        name: "color-lighten",
-        prefix: "lighten",
-        values: {
-            0: "0",
-            1: lighten(colors.primary, 0.1),
-            2: lighten(colors.primary, 0.2),
-            3: lighten(colors.primary, 0.3),
-            4: lighten(colors.primary, 0.4),
-            5: lighten(colors.primary, 0.5),
-            6: lighten(colors.primary, 0.6),
-            7: lighten(colors.primary, 0.7),
-            8: lighten(colors.primary, 0.8),
-            9: lighten(colors.primary, 0.9),
-            10: lighten(colors.primary, 1),
-        },
-    });
-
-    console.log(colorsClasses);
+    return classes;
 }
 
-console.log(genarateShades());
+const fileComment = fs.readFileSync("src/utils/fileComment.txt", "utf8");
 
-module.exports = colors;
+console.log(genarateClasses(classes));
