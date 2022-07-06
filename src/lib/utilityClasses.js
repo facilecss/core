@@ -252,12 +252,12 @@ const classes = [
         prefix: 'bs',
         values: {
             none: 'none',
-            xs: '0 0 0 0.125rem rgba(0,0,0,0.25)',
-            sm: '0 0 0 0.25rem rgba(0,0,0,0.25)',
-            md: '0 0 0 0.375rem rgba(0,0,0,0.25)',
-            lg: '0 0 0 0.5rem rgba(0,0,0,0.25)',
-            xl: '0 0 0 0.75rem rgba(0,0,0,0.25)',
-            xxl: '0 0 0 1rem rgba(0,0,0,0.25)',
+            xs: '1px 3px 5px rgba(0, 0, 0, 0.1);',
+            sm: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
+            md: '0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)',
+            lg: '0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)',
+            xl: '0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)',
+            xxl: '0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22)',
         },
     },
 
@@ -327,6 +327,43 @@ const classes = [
             inline: 'inline',
             'inline-block': 'inline-block',
             'inline-flex': 'inline-flex',
+        },
+    },
+
+    // Alignments
+    {
+        name: 'text-align',
+        prefix: 'text',
+        values: {
+            left: 'left',
+            center: 'center',
+            right: 'right',
+            justify: 'justify',
+        },
+    },
+
+    {
+        name: 'align-items',
+        prefix: 'ai',
+        values: {
+            start: 'start',
+            center: 'center',
+            end: 'end',
+            baseline: 'baseline',
+            stretch: 'stretch',
+        },
+    },
+
+    {
+        name: 'justify-content',
+        prefix: 'justify',
+        values: {
+            start: 'start',
+            center: 'center',
+            end: 'end',
+            between: 'between',
+            around: 'around',
+            stretch: 'stretch',
         },
     },
 ]
