@@ -29,7 +29,7 @@ const colors = {
 classes = [
     {
         name: "color",
-        prefix: "color-",
+        prefix: "text",
         values: {
             primary: colors.primary,
             secondary: colors.secondary,
@@ -50,18 +50,34 @@ classes = [
 ];
 
 function genarateClasses() {
-    let classes = [];
-    for (let i = 0; i < arguments.length; i++) {
-        let className = arguments[i].name;
-        let classPrefix = arguments[i].prefix;
-        let classValues = arguments[i].values;
-        for (let key in classValues) {
-            classes.push(`${classPrefix}${key}`);
-        }
-    }
-    return classes;
+    let time = Date.now();
+    let userClock = moment().format("HH:mm:ss");
+
+    let classs = "";
+    classes.map((item) => {
+        values = Object.keys(item.values)
+            .map((key) => {
+                return `.${item.prefix}-${key} {   ${item.name}: ${item.values[key]} };`;
+            })
+            .join("\n");
+
+        classs += `\n${values}\n`;
+    });
+
+    console.log(
+        chalk.gray(
+            `${chalk.cyanBright(`[${userClock}]`)} ${chalk.hex(
+                config.colors.pink
+            )("✅ Build done in, ")} ${Date.now() - time}ms`
+        )
+    );
+
+    return classs;
 }
 
-const fileComment = fs.readFileSync("src/utils/fileComment.txt", "utf8");
+let fileComment = fs.readFileSync("src/utils/fileComment.txt", "utf8");
 
-console.log(genarateClasses(classes));
+fs.writeFileSync(
+    "src/css/colors.bundle.css",
+    `${fileComment}${cssmin(genarateClasses())}`
+);
