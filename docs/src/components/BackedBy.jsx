@@ -31,7 +31,17 @@ function BackedBy() {
                                     key={index}
                                     href={`${user.href}`}
                                     className="--hover-opacity"
-                                    target="_blank">
+                                    target={`${user.target}`}
+                                    style={
+                                        user.pinned === false
+                                            ? {
+                                                  display: 'none',
+                                              }
+                                            : {
+                                                  display: 'inline-block',
+                                                  margin: '0 10px',
+                                              }
+                                    }>
                                     <img
                                         style={{padding: '20px'}}
                                         width={user.width}
