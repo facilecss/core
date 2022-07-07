@@ -20,10 +20,6 @@
     --ifm-color-primary-lightest: #4fddbf;
 }
 
-.button--get-started {
-    color: white !important;
-}
-
-.button--get-started:hover {
-    color: black !important;
+.--hover-opacity:hover {
+    opacity: 0.7;
 }

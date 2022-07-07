@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import BackedBy from '../components/BackedBy';
 
 const features = [
     {
@@ -62,22 +63,32 @@ export default function Home() {
     const context = useDocusaurusContext();
     const {siteConfig = {}} = context;
     return (
-        <Layout
-            title={`${siteConfig.title}`}
-            description="Simple functional CSS library, build on utility classes & components. <head />">
+        <Layout description="Simple functional CSS library, build on utility classes & components. <head />">
             <header className={clsx('hero hero--primary', styles.heroBanner)}>
                 <div className="container">
                     <h1 className="hero__title">{siteConfig.title}</h1>
                     <p className="hero__subtitle">{siteConfig.tagline}</p>
                     <div className={styles.buttons}>
                         <Link
+                            style={{margin: '0 20px'}}
                             className={clsx(
-                                'button button--outline button--secondary button--lg button--get-started',
+                                'button button--secondary button--lg button--get-started',
                                 styles.getStarted,
                             )}
                             to={useBaseUrl('docs/intro')}>
                             Get Started
                         </Link>
+
+                        <iframe
+                            src={
+                                'https://ghbtns.com/github-btn.html?user=facilecss&repo=core&type=star&count=true&size=large'
+                            }
+                            frameBorder="0"
+                            scrolling="0"
+                            width="160px"
+                            height="30px"
+                            style={{marginTop: '8px'}}
+                        />
                     </div>
                 </div>
             </header>
@@ -101,6 +112,8 @@ export default function Home() {
                     </section>
                 )}
             </main>
+
+            <BackedBy />
         </Layout>
     );
 }

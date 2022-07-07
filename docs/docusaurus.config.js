@@ -53,7 +53,7 @@ const config = {
                         label: 'Documentation',
                     },
                     {to: 'blog', label: 'Blog', position: 'left'},
-                    // Please keep GitHub link to the right for consistency.
+
                     {
                         href: 'https://github.com/facilecss/core',
                         label: 'GitHub',
