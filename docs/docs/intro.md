@@ -4,4 +4,4 @@ sidebar_position: 1
 
 # Facile CSS
 
-Facile is not ready yet, to use or documentation. The development is just started i few days ago. Please check back later.
+Facile is not done yet. The first BETA version will be released at <b>14 July.</b>
