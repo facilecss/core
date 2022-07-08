@@ -19,7 +19,7 @@ function useColors() {
         values = Object.keys(item.shades)
             .map((key) => {
                 return (
-                    `.text-${item.name}-${key} {   color: ${item.shades[key]} }` +
+                    `.text-${item.name}-${key} {   color: ${item.shades[key]}  }` +
                     `.bg-${item.name}-${key} {   background-color: ${item.shades[key]} }`
                 )
             })
