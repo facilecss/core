@@ -8,6 +8,7 @@ const fs = require('fs')
 const config = require('../config')
 const cssmin = require('cssmin')
 const moment = require('moment')
+const { colors } = require('../colors')
 
 const classes = [
     {
@@ -35,6 +36,30 @@ const classes = [
             transition: color 0.2s ease-in-out;
         `,
     },
+
+    // btn with all colors (default, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+    (function () {
+        colors.map((color) => {
+            const value = Object.keys(color.shades).map((key) => {
+                return {
+                    name: `btn-${color.name}-${key}`,
+                    styles: `
+                        color: ${color.shades[key]};
+                        text-decoration: none;
+                        cursor: pointer;
+                        display: inline-block;
+                        border: 0;
+                        padding: 0.75rem 1.5rem;
+                        border-radius: 3px;
+                        background-color: #e2e2e2;
+                        transition: color 0.2s ease-in-out;
+                        `,
+                }
+
+                return value
+            })
+        })
+    })(),
 ]
 
 function genarateClasses() {
