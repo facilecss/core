@@ -20,7 +20,7 @@ function useColors() {
             .map((key) => {
                 return (
                     `.text-${item.name}-${key} {   color: ${item.shades[key]}  }` +
-                    `.bg-${item.name}-${key} {   background-color: ${item.shades[key]} }`
+                    `.bg-${item.name}-${key} {   background-color: ${item.shades[key]} !important }`
                 )
             })
             .join('\n')

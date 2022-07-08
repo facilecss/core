@@ -10,23 +10,75 @@
         <link rel="stylesheet" href="../css/global.css" />
         <title>Document</title>
     </head>
-    <body>
+    <body class="bg-gray-9">
         <nav class="navbar bs-sm bg-info-default">
             <h1 class="font-lg font-mono font-700">This is navbar</h1>
 
-            <ul class="d-flex font-sm text-gray-5">
-                <li class="ml-2 text-gray c-pointer ts-lg">List item</li>
-                <li class="ml-2 text-gray c-not-allowed">List item</li>
-                <li class="ml-2 text-gray c-wait">List item</li>
+            <ul class="d-flex font-sm text-gray-2">
+                <li class="ml-2 text-gray c-pointer">Wtf is this</li>
+                <li class="ml-2 text-gray c-not-allowed">Hello world</li>
+                <li class="ml-2 text-gray c-wait">YEET</li>
             </ul>
         </nav>
 
         <div class="text-center">
-            <h1 class="text-teal font-lg text-center mt-2 mb-2">
-                Text Is Primary
+            <h1
+                class="text-teal font-xxl text-white-default ts-xxl font-bold text-center mt-2 mb-2"
+            >
+                Text Is White Default
             </h1>
 
             <button class="btn text-white btn-info">This is a button</button>
         </div>
+
+        <!-- forms -->
+        <form class="container text-white-default" id="aform">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input
+                    type="email"
+                    class="form-control form-invalid form-valid"
+                    name="email"
+                    id="email"
+                    placeholder="Enter email"
+                    required="This is required"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    class="form-control text-black-default"
+                    name="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                />
+            </div>
+
+            <button type="submit" class="btn bg-blue-4 text-white-default">
+                Submit
+            </button>
+
+            <p class="d-none text-gray-2" id="message"></p>
+        </form>
+
+        <script>
+            document
+                .getElementById('aform')
+                .addEventListener('submit', function (e) {
+                    e.preventDefault()
+
+                    const fieldDetails = {
+                        email: document.getElementById('email').value,
+                        password: document.getElementById('password').value,
+                    }
+
+                    const message = (document.getElementById(
+                        'message'
+                    ).innerText = fieldDetails)
+                })
+        </script>
     </body>
 </html>

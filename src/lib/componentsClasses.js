@@ -61,6 +61,7 @@ const classes = [
         styles: `
             width: 100%;
             padding: 0.5rem;
+            border: 1px solid #ccc;
             border-radius: 0.25rem;
             transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         `,
@@ -101,14 +102,14 @@ const classes = [
     {
         name: 'form-valid:valid',
         styles: `
-            border-color: #dc3545;
+            border-color: #28a745;
         `,
     },
 
     {
         name: 'form-invalid:invalid',
         styles: `
-            border-color: #28a745;
+            border-color: #dc3545;
         `,
     },
 
