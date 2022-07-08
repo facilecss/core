@@ -37,6 +37,81 @@ const classes = [
         `,
     },
 
+    // Forms
+
+    {
+        name: 'form-group',
+        styles: `
+            margin-bottom: 1rem;
+        `,
+    },
+
+    // Form Label
+    {
+        name: 'form-group label',
+        styles: `
+            display: block;
+            margin-bottom: 0.5rem;
+        `,
+    },
+
+    // Form Control
+    {
+        name: 'form-control',
+        styles: `
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        `,
+    },
+    // Focus State
+    {
+        name: 'form-control:focus',
+        styles: `
+            outline: 0;
+            border-color: 0px;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        `,
+    },
+
+    // Form Control [Disabled, Placeholder, Readonly]
+
+    {
+        name: 'form-control:disabled',
+        styles: `
+            background-color: #e9ecef;
+        `,
+    },
+
+    {
+        name: 'form-control:placeholder',
+        styles: `
+            color: #ccc
+        `,
+    },
+
+    {
+        name: 'form-control:read-only',
+        styles: `
+            background-color: #e9ecef;
+        `,
+    },
+
+    {
+        name: 'form-valid:valid',
+        styles: `
+            border-color: #dc3545;
+        `,
+    },
+
+    {
+        name: 'form-invalid:invalid',
+        styles: `
+            border-color: #28a745;
+        `,
+    },
+
     ...colors.map((item) => {
         return {
             name: `btn-${item.name}`,
