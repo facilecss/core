@@ -17,7 +17,9 @@ function BackedBy() {
                 }}>
                 <div className="showcaseSection text--center">
                     <div className="prose" style={{marginBottom: '20px'}}>
-                        <h1>Backed up by</h1>
+                        <h1 style={{marginBottom: '20px'}}>
+                            Facile CSS is used by:
+                        </h1>
                         <div
                             className="logos"
                             style={{
@@ -51,6 +53,11 @@ function BackedBy() {
                                 </a>
                             ))}
                         </div>
+                        <a
+                            href="/users"
+                            className="button button--outline button--secondary">
+                            More users
+                        </a>
                     </div>
                 </div>
             </div>
