@@ -206,8 +206,4 @@ const colors = [
     },
 ]
 
-colors.forEach((color) => {
-    console.log(color.name, color.shades)
-})
-
 module.exports = { colors }

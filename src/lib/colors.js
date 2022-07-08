@@ -11,6 +11,9 @@ const moment = require('moment')
 const { colors } = require('../colors')
 
 function useColors() {
+    let time = Date.now()
+    let userClock = moment().format('HH:mm:ss')
+
     let classs = ''
     colors.map((item) => {
         values = Object.keys(item.shades)
@@ -27,6 +30,14 @@ function useColors() {
     fs.writeFileSync(
         'src/css/colors.bundle.css',
         `${fileComment}${cssmin(classs)}`
+    )
+
+    console.log(
+        chalk.gray(
+            `${chalk.cyanBright(`[${userClock}]`)} ${chalk.hex(
+                config.colors.pink
+            )('✅ Build done in, ')} ${Date.now() - time}ms`
+        )
     )
 
     return classs
