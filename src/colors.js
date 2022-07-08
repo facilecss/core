@@ -50,7 +50,7 @@ const colors = [
 
     {
         name: 'info',
-        shade: {
+        shades: {
             default: '#00bcd4',
             1: '#e5fcff',
             2: '#b3f6ff',
@@ -131,33 +131,83 @@ const colors = [
         name: 'green',
         shades: {
             default: '#19e635',
+            1: '#e8fceb',
+            2: '#baf7c2',
+            3: '#8cf29a',
+            4: '#5eed72',
+            5: '#30e849',
+            6: '#17cf30',
+            7: '#12a125',
+            8: '#0d731b',
+            9: '#084510',
         },
     },
 
     {
         name: 'orange',
-        hexCode: '#ffa600',
+        shades: {
+            default: '#ffa600',
+            1: '#fff6e5',
+            2: '#ffe4b3',
+            3: '#ffd380',
+            4: '#ffc14d',
+            5: '#ffaf1a',
+            6: '#e69500',
+            7: '#b37400',
+            8: '#805300',
+            9: '#805300',
+        },
     },
 
     {
         name: 'purple',
-        hexCode: '#9900ff',
+        shades: {
+            default: '#9900ff',
+            1: '#f5e5ff',
+            2: '#e0b3ff',
+            3: '#cc80ff',
+            4: '#b84dff',
+            5: '#a31aff',
+            6: '#8a00e6',
+            7: '#6b00b3',
+            8: '#4d0080',
+            9: '#2e004d',
+        },
     },
 
     {
         name: 'gray',
-        hexCode: '#808080',
+        shades: {
+            default: '#808080',
+            1: '#f2f2f2',
+            2: '#d9d9d9',
+            3: '#bfbfbf',
+            4: '#a6a6a6',
+            5: '#8c8c8c',
+            6: '#737373',
+            7: '#595959',
+            8: '#404040',
+            9: '#262626',
+        },
     },
 
     {
         name: 'black',
-        hexCode: 'black',
+        shades: {
+            default: 'black',
+        },
     },
 
     {
         name: 'white',
-        hexCode: 'white',
+        shades: {
+            default: 'white',
+        },
     },
 ]
+
+colors.forEach((color) => {
+    console.log(color.name, color.shades)
+})
 
 module.exports = { colors }
