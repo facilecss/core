@@ -16,6 +16,8 @@ if (!fs.existsSync(configFile)) {
 }
 
 /*======== Get the html files ========*/
+let userClock = moment().format('HH:mm:ss')
+
 const config = require(configFile)
 const files = config.settings.watch.files
 const dir = config.settings.watch.dir
@@ -31,9 +33,43 @@ fs.readdir(dir, (err, files) => {
     if (files.length > 0) {
         console.log(
             chalk.gray(
-                `Found ${chalk.cyanBright(files.length)} files to compile.`
+                `${chalk.cyanBright(`[${userClock}]`)} Found ${chalk.cyanBright(
+                    files.length
+                )} files to compile.`
             )
         )
-        console.log(chalk.green(`Compiling...`))
+    } else {
+        console.log(
+            chalk.gray(
+                `${chalk.cyanBright(
+                    `[${userClock}]`
+                )} No files found in ${chalk.cyanBright(dir)}.`
+            )
+        )
+        return
     }
+
+    /*======== Get Classes In The Files ========*/
+    let classes = []
+    files.forEach((file) => {
+        let filePath = path.join(dir, file)
+        let fileContent = fs.readFileSync(filePath, 'utf8')
+        let fileClasses = fileContent.match(/class="[^"]+"/g)
+        if (fileClasses) {
+            fileClasses.forEach((className) => {
+                let classNameWithoutQuotes = className
+                    .replace(/class="/, '')
+                    .replace(/"/, '')
+                classes.push(classNameWithoutQuotes)
+            })
+        }
+
+        console.log(
+            chalk.gray(
+                `${chalk.cyanBright(`[${userClock}]`)} Found ${chalk.cyanBright(
+                    classes.length
+                )} classes to compile.`
+            )
+        )
+    })
 })
