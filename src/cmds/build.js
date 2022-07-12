@@ -114,8 +114,40 @@ fs.readdir(dir, (err, files) => {
                                         )} that matching facile classes.`
                                     )
                                 )
+                            }
+
+                            /*======== Write classes ========*/
+
+                            // the mathching class styles
+                            let matchingClassStyles = cssFile.match(
+                                new RegExp(`.${className}\\s*{[^}]+}`, 'g')
+                            )
+
+                            // writing the matching class styles to the file
+
+                            if (matchingClassStyles) {
+                                console.log(
+                                    chalk.gray(
+                                        `${chalk.cyanBright(
+                                            `[${userClock}]`
+                                        )} No matching class styles found for ${chalk.cyanBright(
+                                            className
+                                        )}.`
+                                    )
+                                )
                             } else {
-                                return
+                                fs.writeFileSync(
+                                    path.join(outDir, `${outFile}`),
+                                    `${fileComment}${cssFile}`,
+
+                                    (err) => {
+                                        if (err) {
+                                            console.error(
+                                                chalk.red('Error: ' + err)
+                                            )
+                                        }
+                                    }
+                                )
                             }
                         }
                     }, 1000)
