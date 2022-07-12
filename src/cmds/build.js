@@ -64,6 +64,18 @@ fs.readdir(dir, (err, files) => {
             })
         }
 
+        classes = classes
+            .map((className) => {
+                return className.split(' ')
+            })
+            .reduce((acc, curr) => {
+                return acc.concat(curr)
+            }, [])
+
+        classes = classes.filter((className, index, self) => {
+            return index === self.indexOf(className)
+        })
+
         console.log(
             chalk.gray(
                 `${chalk.cyanBright(`[${userClock}]`)} Found ${chalk.cyanBright(
