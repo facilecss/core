@@ -7,9 +7,11 @@ const chalk = require('chalk')
 const fs = require('fs')
 const path = require('path')
 const moment = require('moment')
+const minify = require('cssmin')
+const { compiler } = require('../config')
 
 /*======== Config file ========*/
-const configFile = path.join(process.cwd(), 'facile.config.js')
+const configFile = path.join(process.cwd(), compiler.file)
 
 if (!fs.existsSync(configFile)) {
     process.exit(1)
@@ -19,11 +21,18 @@ if (!fs.existsSync(configFile)) {
 let userClock = moment().format('HH:mm:ss')
 
 const config = require(configFile)
+
+/*=====Watch Config=====*/
 const files = config.settings.watch.files
 const dir = config.settings.watch.dir
 const log = config.settings.watch.log
+
+/*=====Settings Config=====*/
 const outDir = config.settings.outDir
 const outFile = config.settings.outFile
+
+/*=====Other Config=====*/
+const fileComment = fs.readFileSync('./src/utils/fileComment.txt', 'utf8')
 
 fs.readdir(dir, (err, files) => {
     if (err) {
@@ -90,31 +99,30 @@ fs.readdir(dir, (err, files) => {
         /*======== Facile.min.css ========*/
         const cssFile = fs.readFileSync('./src/css/facile.bundle.css', 'utf8')
 
-        setTimeout(() => {
-            classes.forEach((className) => {
-                setTimeout(() => {
-                    if (cssFile.includes(className)) {
-                        if (log === true) {
-                            console.log(
-                                chalk.gray(
-                                    `${chalk.cyanBright(
-                                        `[${userClock}]`
-                                    )} Found ${chalk.cyanBright(
-                                        className
-                                    )} that matching facile classes.`
+        try {
+            setTimeout(() => {
+                classes.forEach((className) => {
+                    setTimeout(() => {
+                        if (cssFile.includes(className)) {
+                            if (log === true) {
+                                console.log(
+                                    chalk.gray(
+                                        `${chalk.cyanBright(
+                                            `[${userClock}]`
+                                        )} Found ${chalk.cyanBright(
+                                            className
+                                        )} that matching facile classes.`
+                                    )
                                 )
-                            )
+                            } else {
+                                return
+                            }
                         }
-                    }
-                }, 1000)
-            })
-
-            console.log(
-                chalk.gray(
-                    `${chalk.cyanBright(`[${userClock}]`)} Found 
-                    )} classes that matching facile classes.`
-                )
-            )
-        }, 2000)
+                    }, 1000)
+                })
+            }, 2000)
+        } catch (error) {
+            console.error(chalk.red('Error: ' + error))
+        }
     })
 })
