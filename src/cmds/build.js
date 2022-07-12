@@ -119,13 +119,12 @@ fs.readdir(dir, (err, files) => {
                             /*======== Write classes ========*/
 
                             let content = cssFile.match(
-                                new RegExp(className, 'g'),
-                                `.${className}`
+                                new RegExp(`.${className}\\s*{[^}]+}`, 'g')
                             )
 
                             fs.appendFileSync(
                                 path.join(outDir, `${outFile}`),
-                                `.${className} { ${content} } \n`,
+                                `  ${content}  \n`,
 
                                 (err) => {
                                     if (err) {
