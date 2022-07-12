@@ -118,16 +118,14 @@ fs.readdir(dir, (err, files) => {
 
                             /*======== Write classes ========*/
 
-                            // the mathching class styles
-                            let matchingClassStyles = cssFile.match(
-                                new RegExp(`.${className}\\s*{[^}]+}`, 'g')
+                            let content = cssFile.match(
+                                new RegExp(className, 'g'),
+                                `.${className}`
                             )
-
-                            // writing the matching class styles to the file
 
                             fs.appendFileSync(
                                 path.join(outDir, `${outFile}`),
-                                `${matchingClassStyles}`,
+                                `.${className} { ${content} } \n`,
 
                                 (err) => {
                                     if (err) {
