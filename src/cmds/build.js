@@ -125,30 +125,18 @@ fs.readdir(dir, (err, files) => {
 
                             // writing the matching class styles to the file
 
-                            if (matchingClassStyles) {
-                                console.log(
-                                    chalk.gray(
-                                        `${chalk.cyanBright(
-                                            `[${userClock}]`
-                                        )} No matching class styles found for ${chalk.cyanBright(
-                                            className
-                                        )}.`
-                                    )
-                                )
-                            } else {
-                                fs.writeFileSync(
-                                    path.join(outDir, `${outFile}`),
-                                    `${fileComment}${cssFile}`,
+                            fs.appendFileSync(
+                                path.join(outDir, `${outFile}`),
+                                `${matchingClassStyles}`,
 
-                                    (err) => {
-                                        if (err) {
-                                            console.error(
-                                                chalk.red('Error: ' + err)
-                                            )
-                                        }
+                                (err) => {
+                                    if (err) {
+                                        console.error(
+                                            chalk.red('Error: ' + err)
+                                        )
                                     }
-                                )
-                            }
+                                }
+                            )
                         }
                     }, 1000)
                 })
