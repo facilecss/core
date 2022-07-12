@@ -21,6 +21,7 @@ let userClock = moment().format('HH:mm:ss')
 const config = require(configFile)
 const files = config.settings.watch.files
 const dir = config.settings.watch.dir
+const log = config.settings.watch.log
 const outDir = config.settings.outDir
 const outFile = config.settings.outFile
 
@@ -64,6 +65,8 @@ fs.readdir(dir, (err, files) => {
             })
         }
 
+        /*======== Split classes ========*/
+
         classes = classes
             .map((className) => {
                 return className.split(' ')
@@ -83,5 +86,35 @@ fs.readdir(dir, (err, files) => {
                 )} classes to compile.`
             )
         )
+
+        /*======== Facile.min.css ========*/
+        const cssFile = fs.readFileSync('./src/css/facile.bundle.css', 'utf8')
+
+        setTimeout(() => {
+            classes.forEach((className) => {
+                setTimeout(() => {
+                    if (cssFile.includes(className)) {
+                        if (log === true) {
+                            console.log(
+                                chalk.gray(
+                                    `${chalk.cyanBright(
+                                        `[${userClock}]`
+                                    )} Found ${chalk.cyanBright(
+                                        className
+                                    )} that matching facile classes.`
+                                )
+                            )
+                        }
+                    }
+                }, 1000)
+            })
+
+            console.log(
+                chalk.gray(
+                    `${chalk.cyanBright(`[${userClock}]`)} Found 
+                    )} classes that matching facile classes.`
+                )
+            )
+        }, 2000)
     })
 })
