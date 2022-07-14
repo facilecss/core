@@ -24,6 +24,12 @@ export default defineConfig({
     themeConfig: {
         logo: './icon.png',
 
+        editLink: {
+            pattern:
+                'https://github.com/facilecss/core/edit/main/docs/docs/:path',
+            text: 'Edit this page on GitHub',
+        },
+
         socialLinks: [
             { icon: 'github', link: 'https://github.com/facilecss/core' },
         ],
