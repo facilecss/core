@@ -14,7 +14,7 @@ hero:
     actions:
         - theme: brand
           text: Get Started
-          link: /guide/
+          link: /getting-started
 
         - theme: alt
           text: View on GitHub
@@ -34,14 +34,6 @@ features:
 
 <style>
 
-.name [data-v-736f3fbd] {
-            background-image: linear-gradient(500deg, #ea4442, #eee);
-            color: black;
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            -webkit-box-decoration-break: clone;
-
-}
 
 img {
      

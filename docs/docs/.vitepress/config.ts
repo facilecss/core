@@ -16,6 +16,11 @@ export default defineConfig({
     lastUpdated: true,
     appearance: true,
 
+    markdown: {
+        theme: 'material-palenight',
+        lineNumbers: true,
+    },
+
     themeConfig: {
         logo: './icon.png',
 
@@ -35,6 +40,23 @@ export default defineConfig({
                         link: 'https://github.com/facilecss/core/releases',
                     },
                 ],
+            },
+        ],
+
+        sidebar: [
+            {
+                text: 'Introduction',
+                collapsible: true,
+                items: [
+                    { text: 'Getting Started', link: '/getting-started' },
+                    { text: 'Installation', link: '/installation' },
+                ],
+            },
+
+            {
+                text: 'CLI',
+                collapsible: true,
+                items: [{ text: 'Commands', link: '/cli/commands' }],
             },
         ],
 

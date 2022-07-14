@@ -1,0 +1,17 @@
+:root {
+    --vp-c-brand: #ea4442;
+    --vp-c-brand-light: #ea4442;
+    --vp-c-brand-dark: #ea4442;
+    --vp-c-brand-darker: #ea4442;
+    --vp-c-brand-lightest: #ea4442;
+    --vp-c-brand-lightest-hover: #ea4442;
+    --vp-c-brand-lightest-active: #ea4442;
+}
+
+a {
+    border-radius: 5px !important;
+}
+
+a:hover {
+    border-color: var(--vp-c-brand) !important;
+}
