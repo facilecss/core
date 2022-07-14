@@ -4,3 +4,4 @@ node_modules
 .netlify
 facile.config.js
 vitepress
+dist
