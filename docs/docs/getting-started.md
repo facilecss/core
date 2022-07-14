@@ -23,6 +23,23 @@ Creating your config file.
 facilecss init
 ```
 
+Config File example
+
+```js
+module.exports = {
+    projectName: '${projectName}',
+    version: '${compiler.version}',
+
+    settings: {
+        watch: {
+            dir: './', // this is the dir where your files are located.
+        },
+        outDir: './dist', // you can change to your custom choice, or leave it empty.
+        outFile: 'facile.build.css', // the default output file name is facile.build.css
+    },
+}
+```
+
 ### Step 3
 
 Start the compiler process. You can use the <code>--watch</code> flag to watch for changes.
