@@ -3,10 +3,6 @@ layout: docs
 title: Commands
 ---
 
-<script setup>
-    import version from "../../../package.json";
-</script>
-
 # CLI commands
 
 Read about all the types of commands facile comes with.
