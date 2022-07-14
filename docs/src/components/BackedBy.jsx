@@ -18,7 +18,7 @@ function BackedBy() {
                 <div className="showcaseSection text--center">
                     <div className="prose" style={{marginBottom: '20px'}}>
                         <h1 style={{marginBottom: '20px'}}>
-                            Facile CSS is used by:
+                            Who is using this?
                         </h1>
                         <div
                             className="logos"
