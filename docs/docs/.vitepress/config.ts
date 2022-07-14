@@ -47,10 +47,7 @@ export default defineConfig({
             {
                 text: 'Introduction',
                 collapsible: true,
-                items: [
-                    { text: 'Getting Started', link: '/getting-started' },
-                    { text: 'Installation', link: '/installation' },
-                ],
+                items: [{ text: 'Getting Started', link: '/getting-started' }],
             },
 
             {
