@@ -48,4 +48,4 @@ Start the compiler process. You can use the <code>--watch</code> flag to watch f
 facilecss build --watch
 ```
 
-And then you are good to go. Read about how to use the <a href="/cli/config">config file</a>
+And then you are good to go. Read about how to use the <a href="/cli/config-file">config file</a>

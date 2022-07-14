@@ -53,7 +53,19 @@ export default defineConfig({
             {
                 text: 'CLI',
                 collapsible: true,
-                items: [{ text: 'Commands', link: '/cli/commands' }],
+                items: [
+                    { text: 'Commands', link: '/cli/commands' },
+                    { text: 'Config File', link: '/cli/config-file' },
+                ],
+            },
+
+            {
+                text: 'Spacing',
+                collapsible: true,
+                items: [
+                    { text: 'Margin', link: '/classes/spacing/margin' },
+                    { text: 'Padding', link: '/classes/spacing/padding' },
+                ],
             },
         ],
 
