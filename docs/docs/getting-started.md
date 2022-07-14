@@ -1,4 +1,5 @@
 ---
+layout: docs
 title: Getting Started
 ---
 
@@ -29,3 +30,5 @@ Start the compiler process. You can use the <code>--watch</code> flag to watch f
 ```bash
 facilecss build --watch
 ```
+
+And then you are good to go. Read about how to use the <a href="/cli/config">config file</a>
