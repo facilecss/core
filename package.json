@@ -1,28 +1,43 @@
 {
-  "name": "@facilecss/core",
-  "version": "0.1.1-beta.0",
-  "description": "Simple functional CSS library, build on utility classes & components",
-  "main": "index.js",
-  "scripts": {
-    "dev:cli": "node src/cli.js",
-    "dev:client": "node src/main",
-    "dev:scripts:build": "node scripts/build",
-    "dev:scripts:run": "node scripts/run"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "chalk": "4.1.2",
-    "child_process": "^1.0.2",
-    "cli-spinner": "^0.2.10",
-    "cssmin": "^0.4.3",
-    "inquirer": "8.2.0",
-    "moment": "^2.29.3",
-    "named-colors": "^1.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.19.0",
-    "hypestyle-cli": "^4.2.6"
-  }
+    "name": "@facilecss/core",
+    "version": "0.1.1-beta.0",
+    "description": "Simple functional CSS library, build on utility classes & components",
+    "main": "index.js",
+    "scripts": {
+        "dev:cli": "node src/cli.js",
+        "dev:client": "node src/main",
+        "dev:scripts:build": "node scripts/build",
+        "dev:scripts:run": "node scripts/run",
+        "docs:dev": "vitepress dev docs",
+        "docs:build": "vitepress build docs",
+        "docs:serve": "vitepress serve docs"
+    },
+    "pnpm": {
+        "peerDependencyRules": {
+            "ignoreMissing": [
+                "@types/react",
+                "react",
+                "react-dom"
+            ]
+        }
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "chalk": "4.1.2",
+        "child_process": "^1.0.2",
+        "cli-spinner": "^0.2.10",
+        "cssmin": "^0.4.3",
+        "inquirer": "8.2.0",
+        "moment": "^2.29.3",
+        "named-colors": "^1.0.0"
+    },
+    "devDependencies": {
+        "@algolia/client-search": "^4.13.1",
+        "eslint": "^8.19.0",
+        "hypestyle-cli": "^4.2.6",
+        "vitepress": "1.0.0-alpha.4",
+        "vue": "^3.2.37"
+    }
 }

@@ -3,7 +3,7 @@
  */
 
 import { defineConfig } from 'vitepress'
-import { version } from '../../../package.json'
+import { version } from '../../package.json'
 
 export default defineConfig({
     lang: 'en-US',
