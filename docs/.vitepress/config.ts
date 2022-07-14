@@ -25,8 +25,7 @@ export default defineConfig({
         logo: './icon.png',
 
         editLink: {
-            pattern:
-                'https://github.com/facilecss/core/edit/main/docs/docs/:path',
+            pattern: 'https://github.com/facilecss/core/edit/main/docs/:path',
             text: 'Edit this page on GitHub',
         },
 
