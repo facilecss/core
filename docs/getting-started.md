@@ -5,7 +5,7 @@ title: Getting Started
 
 # Getting Started with Facile CSS
 
-Facile works for all most languages such as <strong>HTML, PHP, EJS, JSX/TSX</strong>. The facile compiler will scan all your files and the classes in your files. If the files match facile's then it compiles them to a single file.
+Facile works for all most languages such as <strong>HTML, PHP, EJS, JSX/TSX</strong>. The facile compiler will scan all your files and the classes in your files. If the clases in your files match facile's then it compiles them to a single file.
 
 ### Step 1
 

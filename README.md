@@ -1,53 +1,31 @@
-<h1 align="center">Facile CSS</h1>
 <p align="center">
-<a href="https://facilecss.com" style="text-align: center; justify-content: center">
-    <img src="https://facilecss.com/img/icon.png" alt="logo" width="100" height="100">
+  <a href="https://facilecss.com">
+    <img src="https://facilecss.com/icon.png" alt="Facile logo" width="200" height="165">
   </a>
 </p>
 
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1.1--beta.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://facilecss.com/docs/intro" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-  <a href="https://github.com/facilecss/core/blob/main/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-  <a href="https://twitter.com/hypll_dev" target="_blank">
-    <img alt="Twitter: hypll_dev" src="https://img.shields.io/twitter/follow/hypll_dev.svg?style=social" />
-  </a>
-</p>
+<h3 align="center">Facile CSS</h3>
 
-> Simple functional CSS library, build on utility classes & components
+<p align="center">
+  Simple functional CSS library, build on utility classes & components. (BETA)
+  <br>
 
-### 🏠 [Homepage](https://facilecss.com)
+<div align="center">
 
-## Available scripts
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?style=plastic)](https://github.com/lassev05/hypestyle/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/github/stars/facilecss/core?style=plastic)](#)
+[![GitHub](https://img.shields.io/github/commit-activity/w/facilecss/core?style=plastic)](#)
 
-```sh
-pnpm run dev:scripts:run
-pnpm run dev:scripts:build
-pnpm run dev:cli <cmd>
-pnpm run client
-```
+</div>
 
-## Author
+---
 
-👤 **Facile CSS**
+To support the development, then feel free to give a star ⭐️
 
--   Website: https://facilecss.com
--   Twitter: [@hypll_dev](https://twitter.com/hypll_dev)
--   Github: [@facilecss](https://github.com/facilecss)
+## Contributing
 
-## 🤝 Contributing
+Coming Soon....
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/facilecss/core/issues).
+## Documentation
 
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-## 📝 License
-
-Copyright © 2022 [Facile CSS](https://github.com/facilecss).<br />
-This project is [MIT](https://github.com/facilecss/core/blob/main/LICENSE) licensed.
+You can see the entire documentation on the [website](https://facilecss.com) (facilecss.com)
