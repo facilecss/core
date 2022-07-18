@@ -33,7 +33,6 @@ const outFile = config.settings.outFile
 
 /*=====Other Config=====*/
 let time = Date.now()
-const fileComment = fs.readFileSync('./src/utils/fileComment.txt', 'utf8')
 
 fs.readdir(dir, (err, files) => {
     if (err) {

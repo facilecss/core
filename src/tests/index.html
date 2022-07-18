@@ -60,22 +60,5 @@
 
             <p class="d-none text-gray-2" id="message"></p>
         </form>
-
-        <script>
-            document
-                .getElementById('aform')
-                .addEventListener('submit', function (e) {
-                    e.preventDefault()
-
-                    const fieldDetails = {
-                        email: document.getElementById('email').value,
-                        password: document.getElementById('password').value,
-                    }
-
-                    const message = (document.getElementById(
-                        'message'
-                    ).innerText = fieldDetails)
-                })
-        </script>
     </body>
 </html>

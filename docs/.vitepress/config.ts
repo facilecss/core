@@ -123,5 +123,11 @@ export default defineConfig({
             message: 'Licensed under MIT',
             copyright: 'Copyright © 2022 Facile CSS',
         },
+
+        algolia: {
+            appId: 'TCHQIC2XOG',
+            apiKey: '679441a9a78880a66a5f57d9ded2d270',
+            indexName: 'hypestylecss',
+        },
     },
 })
