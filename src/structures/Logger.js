@@ -2,9 +2,9 @@ const chalk = require('chalk')
 const moment = require('moment')
 
 let types = {
-    info: 'cyan',
-    success: 'green',
-    warning: 'yellow',
+    info: 'cyanBright',
+    success: 'greenBright',
+    warning: 'yellowBright',
     error: 'redBright',
 }
 
@@ -18,7 +18,7 @@ class Logger {
         let userClock = moment().format('HH:mm:ss')
 
         console.log(
-            `[${chalk.cyanBright(userClock)}]` +
+            `${chalk.cyanBright('[' + userClock + ']')}` +
                 chalk[types[this.type]](` ${this.message}`)
         )
     }
