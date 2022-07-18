@@ -56,6 +56,15 @@ export default defineConfig({
             },
 
             {
+                text: 'Components',
+                collapsible: true,
+                items: [
+                    { text: 'Button', link: '/components/button' },
+                    { text: 'Forms', link: '/components/forms' },
+                ],
+            },
+
+            {
                 text: 'CLI',
                 collapsible: true,
                 items: [
