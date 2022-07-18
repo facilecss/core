@@ -7,6 +7,7 @@ const chalk = require('chalk')
 const fs = require('fs')
 const path = require('path')
 const moment = require('moment')
+const Logger = require('../structures/Logger')
 const minify = require('cssmin')
 const { compiler, colors } = require('../config')
 
@@ -42,44 +43,30 @@ fs.readdir(dir, (err, files) => {
 
     /*=====Start Logging=====*/
 
-    console.log(
-        chalk.cyanBright(
-            `[${userClock}] ${chalk.gray('Starting build process...')}`
-        )
-    )
+    new Logger('info', 'Starting build process...').log()
 
     if (log == true) {
-        console.log(
-            `${chalk.cyanBright(`[${userClock}]`)} ${chalk.gray(
-                'Project name:'
-            )} ${chalk.hex(colors.primary)(config.projectName)}`
-        )
+        new Logger(
+            'info',
+            `Project name: ${chalk.hex(colors.primary)(config.projectName)}`
+        ).log()
 
-        console.log(
-            chalk.cyanBright(
-                `[${userClock}] ${chalk.gray(
-                    'You are using facilecss version:'
-                )} ${chalk.hex(colors.primary)(config.version)} \n`
-            )
-        )
+        new Logger(
+            'info',
+            `You are using facilecss version: ${chalk.hex(colors.primary)(
+                config.version
+            )} \n`
+        ).log()
     }
 
     if (files.length > 0) {
-        console.log(
-            chalk.gray(
-                `${chalk.cyanBright(`[${userClock}]`)} Found ${chalk.cyanBright(
-                    files.length
-                )} files to compile.`
-            )
-        )
+        new Logger(
+            'info',
+            `Found ${chalk.cyanBright(files.length)} files to compile.`
+        ).log()
     } else {
-        console.log(
-            chalk.gray(
-                `${chalk.cyanBright(
-                    `[${userClock}]`
-                )} No files found in ${chalk.cyanBright(dir)}.`
-            )
-        )
+        new Logger('info', `No files found in ${chalk.cyanBright(dir)}.`).log()
+
         return
     }
 
@@ -112,18 +99,19 @@ fs.readdir(dir, (err, files) => {
             return index === self.indexOf(className)
         })
 
-        console.log(
-            chalk.gray(
-                `${chalk.cyanBright(`[${userClock}]`)} Found ${chalk.cyanBright(
-                    classes.length
-                )} classes to compile.`
-            )
-        )
+        console.log()
+
+        new Logger(
+            'info',
+            `${file} has ${chalk.cyanBright(classes.length)} classes.`
+        ).log()
 
         /*======== Facile.min.css ========*/
         const cssFile = fs.readFileSync('./src/css/facile.bundle.css', 'utf8')
 
         /*======== Build Starts here ========*/
+
+        console.log()
 
         try {
             setTimeout(() => {
@@ -131,15 +119,10 @@ fs.readdir(dir, (err, files) => {
                     setTimeout(() => {
                         if (cssFile.includes(className)) {
                             if (log === true) {
-                                console.log(
-                                    chalk.gray(
-                                        `${chalk.cyanBright(
-                                            `[${userClock}]`
-                                        )} Found ${chalk.cyanBright(
-                                            className
-                                        )} that matching facile classes.`
-                                    )
-                                )
+                                new Logger(
+                                    'info',
+                                    `${chalk.cyanBright(className)} matched.`
+                                ).log()
                             }
 
                             /*======== Write classes ========*/
@@ -154,26 +137,27 @@ fs.readdir(dir, (err, files) => {
 
                                 (err) => {
                                     if (err) {
-                                        console.error(
-                                            chalk.red('Error: ' + err)
-                                        )
+                                        new Logger(
+                                            'error',
+                                            `Error: ${chalk.cyanBright(err)}`
+                                        ).log()
                                     }
                                 }
                             )
                         }
                     }, 200)
                 })
-                console.log(
-                    chalk.cyanBright(
-                        `${chalk.cyanBright(`[${userClock}]`)} ${
-                            chalk.greenBright('Build process finished. ') +
-                            chalk.grey(`Done in ${Date.now() - time}ms.`)
-                        }`
-                    )
-                )
             }, 500)
         } catch (error) {
-            console.error(chalk.red('Error: ' + error))
+            new Logger('error', `Error: ${chalk.cyanBright(err)}`).log()
         }
     })
+
+    setTimeout(() => {
+        /*======== Build Done ========*/
+        new Logger(
+            'success',
+            `✅ Build was done in ${chalk.cyanBright(Date.now() - time)}ms`
+        ).log()
+    }, 700)
 })

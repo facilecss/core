@@ -19,7 +19,7 @@ class Logger {
 
         console.log(
             `${chalk.cyanBright('[' + userClock + ']')}` +
-                chalk[types[this.type]](` ${this.message}`)
+                chalk[types[this.type]](` ${chalk.gray(this.message)}`)
         )
     }
 }
