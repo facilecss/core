@@ -55,7 +55,7 @@ fs.readdir(dir, (err, files) => {
             'info',
             `You are using facilecss version: ${chalk.hex(colors.primary)(
                 config.version
-            )} \n`
+            )}`
         ).log()
     }
 
@@ -99,8 +99,6 @@ fs.readdir(dir, (err, files) => {
             return index === self.indexOf(className)
         })
 
-        console.log()
-
         new Logger(
             'info',
             `${file} has ${chalk.cyanBright(classes.length)} classes.`
@@ -110,8 +108,6 @@ fs.readdir(dir, (err, files) => {
         const cssFile = fs.readFileSync('./src/css/facile.bundle.css', 'utf8')
 
         /*======== Build Starts here ========*/
-
-        console.log()
 
         try {
             setTimeout(() => {
