@@ -7,7 +7,7 @@ import { version } from '../../package.json'
 
 export default defineConfig({
     lang: 'en-US',
-    title: 'Facile CSS',
+    title: 'Facile CSS (BETA)',
     description:
         'Simple functional CSS library, build on utility classes & components.',
 
