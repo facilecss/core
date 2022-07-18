@@ -8,7 +8,7 @@ const fs = require('fs')
 const path = require('path')
 const moment = require('moment')
 const minify = require('cssmin')
-const { compiler } = require('../config')
+const { compiler, colors } = require('../config')
 
 /*======== Config file ========*/
 const configFile = path.join(process.cwd(), compiler.file)
@@ -32,12 +32,37 @@ const outDir = config.settings.outDir
 const outFile = config.settings.outFile
 
 /*=====Other Config=====*/
+let time = Date.now()
 const fileComment = fs.readFileSync('./src/utils/fileComment.txt', 'utf8')
 
 fs.readdir(dir, (err, files) => {
     if (err) {
         console.error(chalk.red(err))
         return
+    }
+
+    /*=====Start Logging=====*/
+
+    console.log(
+        chalk.cyanBright(
+            `[${userClock}] ${chalk.gray('Starting build process...')}`
+        )
+    )
+
+    if (log == true) {
+        console.log(
+            `${chalk.cyanBright(`[${userClock}]`)} ${chalk.gray(
+                'Project name:'
+            )} ${chalk.hex(colors.primary)(config.projectName)}`
+        )
+
+        console.log(
+            chalk.cyanBright(
+                `[${userClock}] ${chalk.gray(
+                    'You are using facilecss version:'
+                )} ${chalk.hex(colors.primary)(config.version)} \n`
+            )
+        )
     }
 
     if (files.length > 0) {
@@ -99,6 +124,8 @@ fs.readdir(dir, (err, files) => {
         /*======== Facile.min.css ========*/
         const cssFile = fs.readFileSync('./src/css/facile.bundle.css', 'utf8')
 
+        /*======== Build Starts here ========*/
+
         try {
             setTimeout(() => {
                 classes.forEach((className) => {
@@ -135,9 +162,17 @@ fs.readdir(dir, (err, files) => {
                                 }
                             )
                         }
-                    }, 1000)
+                    }, 200)
                 })
-            }, 2000)
+                console.log(
+                    chalk.cyanBright(
+                        `${chalk.cyanBright(`[${userClock}]`)} ${
+                            chalk.greenBright('Build process finished. ') +
+                            chalk.grey(`Done in ${Date.now() - time}ms.`)
+                        }`
+                    )
+                )
+            }, 500)
         } catch (error) {
             console.error(chalk.red('Error: ' + error))
         }
