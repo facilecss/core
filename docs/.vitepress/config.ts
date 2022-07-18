@@ -60,7 +60,8 @@ export default defineConfig({
                 collapsible: true,
                 items: [
                     { text: 'Button', link: '/components/button' },
-                    { text: 'Forms', link: '/components/forms' },
+                    { text: 'Form', link: '/components/forms' },
+                    { text: 'Navbar', link: '/components/navbar' },
                 ],
             },
 
@@ -74,12 +75,47 @@ export default defineConfig({
             },
 
             {
+                text: 'Color',
+                collapsible: true,
+                items: [
+                    { text: 'Text', link: '/classes/color/text' },
+                    { text: 'Background', link: '/classes/color/background' },
+                ],
+            },
+
+            {
                 text: 'Spacing',
                 collapsible: true,
                 items: [
                     { text: 'Margin', link: '/classes/spacing/margin' },
                     { text: 'Padding', link: '/classes/spacing/padding' },
                 ],
+            },
+
+            {
+                text: 'Typography',
+                collapsible: true,
+                items: [
+                    {
+                        text: 'Font Size',
+                        link: '/classes/typography/font-size',
+                    },
+
+                    {
+                        text: 'Font Family',
+                        link: '/classes/typography/font-family',
+                    },
+
+                    {
+                        text: 'Text Alignment',
+                        link: '/classes/typography/text-alignment',
+                    },
+                ],
+            },
+            {
+                text: 'Sizing',
+                collapsible: true,
+                items: [{ text: 'Height', link: '/classes/sizing/height' }],
             },
         ],
 

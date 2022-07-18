@@ -26,6 +26,18 @@ module.exports = {
 }
 ```
 
+### Logger
+
+The logger proberty is optional. If you don't want to use the logger, you can set it to false.
+
+The logger will log the following things:
+
+-   All your utility classes
+
+#### Usage
+
+-   <code>watch.log</code> (true or false)
+
 ### Settings Config
 
 The proberty for the settings is <code>settings.\*</code>
