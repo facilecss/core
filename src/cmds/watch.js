@@ -10,11 +10,13 @@ const fs = require('fs')
 const path = require('path')
 const Logger = require('../structures/Logger')
 const { compiler, colors } = require('../config')
+const { setTimeout } = require('timers/promises')
 
 /*======== Config file ========*/
 
 const configFile = path.join(process.cwd(), compiler.file)
 const config = require(configFile)
+const outPutFileName = config.settings.outFile
 
 if (!fs.existsSync(configFile)) {
     process.exit(1)
@@ -40,14 +42,12 @@ watcher.on('change', (path, stats) => {
         }
     }
 
-    new Logger(
-        'info',
-        `File ${chalk.hex(colors.orange)(path)} has been changed.`
-    ).log()
-
-    new Logger('info', 'Rebuilding...').log()
-
-    child_process.execSync(`node src/cli build --watch`, {
-        stdio: 'inherit',
-    })
+    if (path.split('/').pop() === outPutFileName) {
+        return
+    } else {
+        new Logger('info', 'Rebuilding...').log()
+        child_process.execSync(`node src/cli build --watch`, {
+            stdio: 'inherit',
+        })
+    }
 })
