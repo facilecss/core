@@ -37,8 +37,17 @@ getFiles()
                     classes.length
                 )} classes to compile...`
             ).log()
+
+            console.log(classes)
+
+            const pathTOBundleFile = fs.readdirSync('./src/css/')
+            const bundleFile = pathTOBundleFile[0]
+            const bundleFileContent = fs.readFileSync(
+                `./src/css/${bundleFile}`,
+                'utf8'
+            )
         })
     })
     .catch((err) => {
-        new Logger('error', `Error: ${chalk.red(err)}`).log()
+        new Logger('error', `${chalk.red(err)}`).log()
     })

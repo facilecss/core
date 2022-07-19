@@ -7,7 +7,7 @@ const fs = require('fs')
 const path = require('path')
 const Logger = require('../structures/Logger')
 const chalk = require('chalk')
-const { compiler } = require('../config')
+const { compiler, colors } = require('../config')
 
 const configFile = path.join(process.cwd(), compiler.file)
 const config = require(configFile)
