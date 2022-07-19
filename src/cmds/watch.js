@@ -10,7 +10,6 @@ const fs = require('fs')
 const path = require('path')
 const Logger = require('../structures/Logger')
 const { compiler, colors } = require('../config')
-const { setTimeout } = require('timers/promises')
 
 /*======== Config file ========*/
 
@@ -42,7 +41,7 @@ watcher.on('change', (path, stats) => {
         }
     }
 
-    if (path.split('/').pop() === outPutFileName) {
+    if (path.split('/').pop() === outPutFileName || 'facile.build.css') {
         return
     } else {
         new Logger('info', 'Rebuilding...').log()
