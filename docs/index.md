@@ -7,7 +7,7 @@ titleTemplate: Simple, Functional, Clean, Easy
 hero:
     name: Facile CSS
     text: Simple, Functional, Clean, Easy
-    tagline: Simple functional CSS library, build on utility classes & components.
+    tagline: A simple functional CSS library for building fast, beautiful & clean websites.
     image:
         src: ./icon.png
         alt: Facile CSS Icon
