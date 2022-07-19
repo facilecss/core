@@ -20,6 +20,8 @@ process.argv.forEach((cmd) => {
         require('./cmds/init')
     } else if (cmd == 'build') {
         require('./cmds/build')
+    } else if (cmd == 'build-test') {
+        require('./cmds/build-test')
     } else if (cmd == '--watch') {
         require('./cmds/watch')
     }

@@ -101,11 +101,14 @@ fs.readdir(dir, (err, files) => {
 
         new Logger(
             'info',
-            `${file} has ${chalk.cyanBright(classes.length)} classes.`
+            `${chalk.hex(colors.orange)(file)} has ${chalk.cyanBright(
+                classes.length
+            )} classes.`
         ).log()
 
         /*======== Facile.min.css ========*/
-        const cssFile = fs.readFileSync('./src/css/facile.bundle.css', 'utf8')
+        // link to the minified file
+        const cssFile = path.join('../css', 'facile.bundle.css')
 
         /*======== Build Starts here ========*/
 
@@ -117,7 +120,9 @@ fs.readdir(dir, (err, files) => {
                             if (log === true) {
                                 new Logger(
                                     'info',
-                                    `${chalk.cyanBright(className)} matched.`
+                                    `${chalk.hex(colors.orange)(
+                                        className
+                                    )} matched.`
                                 ).log()
                             }
 
@@ -141,9 +146,9 @@ fs.readdir(dir, (err, files) => {
                                 }
                             )
                         }
-                    }, 200)
+                    }, 10)
                 })
-            }, 500)
+            }, 30)
         } catch (error) {
             new Logger('error', `Error: ${chalk.cyanBright(err)}`).log()
         }

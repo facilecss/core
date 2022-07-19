@@ -16,6 +16,11 @@ let commands = [
         name: 'build',
         message: 'Build a your css',
     },
+
+    {
+        name: 'build --watch',
+        message: 'Build a your css and watch for changes',
+    },
 ]
 
 inquirer
@@ -34,5 +39,7 @@ inquirer
             runCmd('pnpm dev:cli init', { stdio: 'inherit' })
         } else if (answers.command === 'build') {
             runCmd('pnpm dev:cli build', { stdio: 'inherit' })
+        } else if (answers.command === 'build --watch') {
+            runCmd('pnpm dev:cli build --watch', { stdio: 'inherit' })
         }
     })
