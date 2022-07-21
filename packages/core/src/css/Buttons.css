@@ -39,4 +39,14 @@
         @apply bg-slate-800 text-white hover:bg-slate-700 
     focus:ring-gray-300;
     }
+
+    /* Button sizes */
+
+    .btn-sm {
+        @apply px-4 py-2;
+    }
+
+    .btn-lg {
+        @apply px-8 py-4;
+    }
 }
