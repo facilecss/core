@@ -15,14 +15,11 @@
         @apply flex list-none;
     }
 
-    /* Nav items */
-    .navbar .nav-item {
-        @apply flex items-center;
+    .navbar .shadow-none {
+        box-shadow: none !important;
     }
 
-    @media screen and (min-width: 768px) {
-        .navbar {
-            @apply w-auto;
-        }
+    .navbar .nav-item {
+        @apply ml-3;
     }
 }
