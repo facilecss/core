@@ -37,22 +37,51 @@ getCSSFiles(path.join(__dirname, './css')).forEach((file) => {
     spinner.setSpinnerString('|/-\\')
     spinner.start()
 
-    let questions = [
-        {
-            type: 'confirm',
-            name: 'continue',
-            message: 'Do you me to run TailwindCSS?',
-        },
-    ]
-
-    inquirer.prompt(questions).then((answers) => {
-        if (answers.continue) {
-            // Run tailwindcss
-            child_process.execSync(`pnpm run dev:tailwindcss`, {
-                stdio: 'inherit',
-            })
-        }
-    })
+    // if (answers.continue) {
+    //     // Run tailwindcss
+    //     child_process.execSync(`pnpm run dev:tailwindcss`, {
+    //         stdio: 'inherit',
+    //     })
+    // }
 
     spinner.stop(true)
 })
+
+// Tailwind Config Run
+runQuestions()
+
+function runQuestions() {
+    console.log()
+    inquirer
+        .prompt([
+            {
+                type: 'list',
+                name: 'continue',
+                message: 'What tailwind command do you want to run?',
+                choices: [
+                    {
+                        name: 'dev:tailwindcss:watch',
+                        value: 'dev:tailwindcss',
+                    },
+
+                    {
+                        name: 'dev:tailwindcss',
+                        value: 'dev:tailwindcss',
+                    },
+                ],
+            },
+        ])
+        .then((answers) => {
+            if (answers.continue === 'dev:tailwindcss') {
+                // Run tailwindcss
+                child_process.execSync(`pnpm run dev:tailwindcss:watch`, {
+                    stdio: 'inherit',
+                })
+            } else if (answers.continue === 'dev:tailwindcss:watch') {
+                // Run tailwindcss
+                child_process.execSync(`pnpm run dev:tailwindcss`, {
+                    stdio: 'inherit',
+                })
+            }
+        })
+}

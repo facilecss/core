@@ -6,7 +6,8 @@
     "type": "commonjs",
     "scripts": {
         "dev": "node src/index.js",
-        "dev:tailwindcss": "tailwindcss -i ./src/dist/bundle.css -o ./src/dist/build.css --watch"
+        "dev:tailwindcss": "tailwindcss -i ./src/dist/bundle.css -o ./src/dist/build.css",
+        "dev:tailwindcss:watch": "tailwindcss -i ./src/dist/bundle.css -o ./src/dist/build.css --watch"
     },
     "keywords": [],
     "author": "",
