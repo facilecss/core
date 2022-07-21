@@ -1,0 +1,28 @@
+@layer base {
+    .navbar {
+        @apply w-full flex items-center justify-between box-border p-4 shadow-md;
+    }
+
+    .navbar .site-title {
+        @apply text-lg;
+    }
+
+    .navbar .container {
+        @apply w-full flex items-center justify-between box-border;
+    }
+
+    .navbar ul {
+        @apply flex list-none;
+    }
+
+    /* Nav items */
+    .navbar .nav-item {
+        @apply flex items-center;
+    }
+
+    @media screen and (min-width: 768px) {
+        .navbar {
+            @apply w-auto;
+        }
+    }
+}

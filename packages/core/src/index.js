@@ -37,13 +37,6 @@ getCSSFiles(path.join(__dirname, './css')).forEach((file) => {
     spinner.setSpinnerString('|/-\\')
     spinner.start()
 
-    // if (answers.continue) {
-    //     // Run tailwindcss
-    //     child_process.execSync(`pnpm run dev:tailwindcss`, {
-    //         stdio: 'inherit',
-    //     })
-    // }
-
     spinner.stop(true)
 })
 
@@ -74,12 +67,12 @@ function runQuestions() {
         .then((answers) => {
             if (answers.continue === 'dev:tailwindcss') {
                 // Run tailwindcss
-                child_process.execSync(`pnpm run dev:tailwindcss:watch`, {
+                child_process.execSync(`pnpm run dev:tailwindcss`, {
                     stdio: 'inherit',
                 })
             } else if (answers.continue === 'dev:tailwindcss:watch') {
                 // Run tailwindcss
-                child_process.execSync(`pnpm run dev:tailwindcss`, {
+                child_process.execSync(`pnpm run dev:tailwindcss:watch`, {
                     stdio: 'inherit',
                 })
             }
