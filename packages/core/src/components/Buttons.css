@@ -1,0 +1,7 @@
+.btn {
+    @apply px-8 py-4;
+}
+
+.btn-primary {
+    @apply bg-blue-500 text-white hover:;
+}

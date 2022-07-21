@@ -4,9 +4,17 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "node src/index.js"
+        "dev": "node src/index.js",
+        "dev:tailwind": ""
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "tailwindcss": "^3.1.6"
+    },
+    "dependencies": {
+        "gulp": "^4.0.2",
+        "gulp-concat": "^2.6.1"
+    }
 }
