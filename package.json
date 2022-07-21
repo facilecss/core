@@ -3,18 +3,12 @@
     "version": "0.1.3-beta.0",
     "description": "Simple functional CSS library, build on utility classes & components",
     "main": "index.js",
-    "bin": {
-        "facilecss": "./src/cli.js"
-    },
     "homepage": "https://facilecss.com",
     "repository": {
         "url": "https://github.com/facilecss/core"
     },
     "scripts": {
-        "dev:cli": "node src/cli.js",
-        "dev:client": "node src/main",
-        "dev:scripts:build": "node scripts/build",
-        "dev:scripts:run": "node scripts/run",
+        "dev:learna:core": "lerna run dev --scope core",
         "docs:dev": "vitepress dev docs",
         "docs:build": "vitepress build docs",
         "docs:serve": "vitepress serve docs"
@@ -44,6 +38,8 @@
         "@algolia/client-search": "^4.13.1",
         "eslint": "^8.19.0",
         "hypestyle-cli": "^4.2.6",
+        "lerna": "^5.1.8",
+        "nx": "^14.4.3",
         "vitepress": "1.0.0-alpha.4",
         "vue": "^3.2.37"
     }
