@@ -3,9 +3,10 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "type": "commonjs",
     "scripts": {
         "dev": "node src/index.js",
-        "dev:tailwind": ""
+        "dev:tailwindcss": "tailwindcss -i ./src/dist/bundle.css -o ./src/dist/build.css --watch"
     },
     "keywords": [],
     "author": "",
@@ -15,6 +16,7 @@
     },
     "dependencies": {
         "chalk": "4.1.2",
+        "cli-spinner": "^0.2.10",
         "gulp": "^4.0.2",
         "gulp-concat": "^2.6.1"
     }

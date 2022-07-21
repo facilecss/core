@@ -2,12 +2,14 @@ lockfileVersion: 5.4
 
 specifiers:
   chalk: 4.1.2
+  cli-spinner: ^0.2.10
   gulp: ^4.0.2
   gulp-concat: ^2.6.1
   tailwindcss: ^3.1.6
 
 dependencies:
   chalk: 4.1.2
+  cli-spinner: 0.2.10
   gulp: 4.0.2
   gulp-concat: 2.6.1
 
@@ -393,6 +395,11 @@ packages:
       define-property: 0.2.5
       isobject: 3.0.1
       static-extend: 0.1.2
+    dev: false
+
+  /cli-spinner/0.2.10:
+    resolution: {integrity: sha512-U0sSQ+JJvSLi1pAYuJykwiA8Dsr15uHEy85iCJ6A+0DjVxivr3d+N2Wjvodeg89uP5K6TswFkKBfAD7B3YSn/Q==}
+    engines: {node: '>=0.10'}
     dev: false
 
   /cliui/3.2.0:
