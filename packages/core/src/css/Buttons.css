@@ -1,9 +1,14 @@
 @layer base {
     .btn {
-        @apply rounded-md px-8 py-3 transition delay-[65ms] focus:ring-4;
+        @apply rounded-md px-6 py-3 transition delay-[65ms] focus:ring-4 cursor-pointer;
     }
 
     .btn-primary {
+        @apply bg-primary-100 text-white ring-primary-400
+    hover:bg-primary-200;
+    }
+
+    .btn-blue {
         @apply bg-blue-600 text-white
    hover:bg-blue-500;
     }

@@ -45,7 +45,7 @@ getCSSFiles(path.join(__dirname, './css')).forEach((file) => {
                 flag: 'a',
             }
         )
-    }, 2000)
+    }, 200)
 
     const spinner = new Spinner('Running tailwindcss... %s')
     spinner.setSpinnerString('|/-\\')
