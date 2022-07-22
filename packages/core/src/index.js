@@ -8,14 +8,9 @@ This file contains the code from Facile CSS open source project.
 const fs = require('fs')
 const path = require('path')
 const child_process = require('child_process')
-const chalk = require('chalk')
-const Logger = require('./classes/Logger')
 const Spinner = require('cli-spinner').Spinner
 const inquirer = require('inquirer')
-
-function getCSSFiles(dir) {
-    return fs.readdirSync(dir).filter((file) => file.endsWith('.css'))
-}
+const { Logger, checkForContent, getCSSFiles } = require('@facilecss/utils')
 
 getCSSFiles(path.join(__dirname, './css')).forEach((file) => {
     const fileContents = fs.readFileSync(
@@ -25,13 +20,32 @@ getCSSFiles(path.join(__dirname, './css')).forEach((file) => {
 
     new Logger('info').log(`Processing ${file}`)
 
-    fs.writeFileSync(
-        path.join(__dirname, './dist', 'bundle.css'),
-        fileContents,
-        {
-            flag: 'a',
-        }
+    checkForContent(path.join(__dirname, './dist', 'bundle.css'))
+    new Logger('warn').log(
+        `The file ${path.join(
+            __dirname,
+            './dist',
+            'bundle.css'
+        )} already contains content.`
     )
+
+    new Logger('info').log(
+        `Deleting the file contens ${path.join(
+            __dirname,
+            './dist',
+            'bundle.css'
+        )}`
+    )
+
+    setTimeout(() => {
+        fs.writeFileSync(
+            path.join(__dirname, './dist', 'bundle.css'),
+            fileContents,
+            {
+                flag: 'a',
+            }
+        )
+    }, 2000)
 
     const spinner = new Spinner('Running tailwindcss... %s')
     spinner.setSpinnerString('|/-\\')

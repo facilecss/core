@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@facilecss/utils': ^0.0.1
   chalk: 4.1.2
   cli-spinner: ^0.2.10
   gulp: ^4.0.2
@@ -9,6 +10,7 @@ specifiers:
   tailwindcss: ^3.1.6
 
 dependencies:
+  '@facilecss/utils': 0.0.1
   chalk: 4.1.2
   cli-spinner: 0.2.10
   gulp: 4.0.2
@@ -19,6 +21,10 @@ devDependencies:
   tailwindcss: 3.1.6
 
 packages:
+
+  /@facilecss/utils/0.0.1:
+    resolution: {integrity: sha512-fko1uomWEEybC+wxTRmorjGGdV//G/J5wb7Eqn+WK+1xl7zqnYY+MoEN//4t9WNKJstAOuuziauqSvwRvK4F3Q==}
+    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
