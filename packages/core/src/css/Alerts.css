@@ -1,0 +1,50 @@
+@layer base {
+    .alert {
+        @apply bg-gray-200 border-2 border-gray-200 rounded-md shadow-md p-2;
+    }
+
+    .alert-primary {
+        @apply bg-primary-100;
+    }
+
+    .alert-blue {
+        @apply bg-blue-500;
+    }
+
+    .alert-secondary {
+        @apply bg-gray-500;
+    }
+
+    .alert-success {
+        @apply bg-green-600;
+    }
+
+    .alert-danger {
+        @apply bg-red-600;
+    }
+
+    .alert-warning {
+        @apply bg-yellow-500;
+    }
+
+    .alert-info {
+        @apply bg-teal-300;
+    }
+
+    .alert-light {
+        @apply bg-gray-100 text-slate-600;
+    }
+
+    .alert-dark {
+        @apply bg-slate-800;
+    }
+
+    /* Alert sizes */
+    .alert-sm {
+        @apply px-4 py-2;
+    }
+
+    .alert-lg {
+        @apply px-8 py-4;
+    }
+}

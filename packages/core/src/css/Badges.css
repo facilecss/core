@@ -7,7 +7,7 @@
     }
 
     .badge-primary {
-        @apply bg-primary-100;
+        @apply bg-primary-100 border-primary-400 border-10;
     }
 
     .badge-blue {
