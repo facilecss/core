@@ -1,57 +1,55 @@
-@layer base {
-    .btn {
-        @apply rounded-md px-6 py-3 transition delay-[65ms] focus:ring-4 cursor-pointer;
-    }
+.btn {
+    @apply rounded-md px-6 py-3 transition delay-[65ms] focus:ring-4 cursor-pointer;
+}
 
-    .btn-primary {
-        @apply bg-primary-100 text-white ring-primary-400
+.btn-primary {
+    @apply bg-primary-100 text-white ring-primary-400
     hover:bg-primary-200;
-    }
+}
 
-    .btn-blue {
-        @apply bg-blue-600 text-white
+.btn-blue {
+    @apply bg-blue-600 text-white
    hover:bg-blue-500;
-    }
+}
 
-    .btn-secondary {
-        @apply bg-gray-500 text-white ring-slate-300 
+.btn-secondary {
+    @apply bg-gray-500 text-white ring-slate-300 
     hover:bg-gray-400;
-    }
+}
 
-    .btn-success {
-        @apply bg-green-600 text-white hover:bg-green-500 
+.btn-success {
+    @apply bg-green-600 text-white hover:bg-green-500 
      focus:ring-green-200;
-    }
+}
 
-    .btn-danger {
-        @apply bg-red-600 text-white hover:bg-red-400 focus:ring-red-200;
-    }
+.btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-400 focus:ring-red-200;
+}
 
-    .btn-warning {
-        @apply bg-yellow-500 text-black 
+.btn-warning {
+    @apply bg-yellow-500 text-black 
     hover:bg-yellow-400 focus:ring-yellow-200;
-    }
+}
 
-    .btn-info {
-        @apply bg-teal-300 hover:bg-teal-200 focus:ring-teal-100;
-    }
+.btn-info {
+    @apply bg-teal-300 hover:bg-teal-200 focus:ring-teal-100;
+}
 
-    .btn-light {
-        @apply bg-gray-100 focus:ring-gray-200;
-    }
+.btn-light {
+    @apply bg-gray-100 focus:ring-gray-200;
+}
 
-    .btn-dark {
-        @apply bg-slate-800 text-white hover:bg-slate-700 
+.btn-dark {
+    @apply bg-slate-800 text-white hover:bg-slate-700 
     focus:ring-gray-300;
-    }
+}
 
-    /* Button sizes */
+/* Button sizes */
 
-    .btn-sm {
-        @apply px-4 py-2;
-    }
+.btn-sm {
+    @apply px-4 py-2;
+}
 
-    .btn-lg {
-        @apply px-8 py-4;
-    }
+.btn-lg {
+    @apply px-8 py-4;
 }

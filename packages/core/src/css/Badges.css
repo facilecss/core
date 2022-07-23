@@ -1,53 +1,51 @@
-@layer base {
-    .badge {
-        @apply inline-block text-[75%] font-semibold text-white text-center whitespace-nowrap
+.badge {
+    @apply inline-block text-[75%] font-semibold text-white text-center whitespace-nowrap
             align-baseline rounded bg-[#555];
 
-        padding: 0.25em 0.4em;
-    }
+    padding: 0.25em 0.4em;
+}
 
-    .badge-primary {
-        @apply bg-primary-100 border-primary-400 border-4;
-    }
+.badge-primary {
+    @apply bg-primary-100;
+}
 
-    .badge-blue {
-        @apply bg-blue-500;
-    }
+.badge-blue {
+    @apply bg-blue-500;
+}
 
-    .badge-secondary {
-        @apply bg-gray-500;
-    }
+.badge-secondary {
+    @apply bg-gray-500;
+}
 
-    .badge-success {
-        @apply bg-green-600;
-    }
+.badge-success {
+    @apply bg-green-600;
+}
 
-    .badge-danger {
-        @apply bg-red-600;
-    }
+.badge-danger {
+    @apply bg-red-600;
+}
 
-    .badge-warning {
-        @apply bg-yellow-500;
-    }
+.badge-warning {
+    @apply bg-yellow-500;
+}
 
-    .badge-info {
-        @apply bg-teal-300;
-    }
+.badge-info {
+    @apply bg-teal-300;
+}
 
-    .badge-light {
-        @apply bg-gray-100 text-slate-600;
-    }
+.badge-light {
+    @apply bg-gray-100 text-slate-600;
+}
 
-    .badge-dark {
-        @apply bg-slate-800;
-    }
+.badge-dark {
+    @apply bg-slate-800;
+}
 
-    /* Diffrent sizes */
-    .badge-sm {
-        @apply px-2 py-1;
-    }
+/* Diffrent sizes */
+.badge-sm {
+    @apply px-2 py-1;
+}
 
-    .badge-lg {
-        @apply px-4 py-2;
-    }
+.badge-lg {
+    @apply px-4 py-2;
 }
