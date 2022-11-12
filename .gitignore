@@ -5,5 +5,3 @@ node_modules
 facile.config.js
 vitepress
 dist
-index.html
-components.html
